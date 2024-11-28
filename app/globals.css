@@ -109,8 +109,8 @@ body {
   }
 }
 .animate-reversedScroll {
-  animation: reversedScroll 30s linear infinite;
+  animation: reversedScroll 50s linear infinite;
 }
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 50s linear infinite;
 }

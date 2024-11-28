@@ -5,7 +5,7 @@ import { Search } from "lucide-react";
 const Hero = () => {
   return (
     <div
-      className="h-[550px] w-full"
+      className="h-[600px] w-full"
       style={{
         backgroundImage: "url(/images/skyline.jpg)",
         // "url(https://wallpapers.com/images/hd/toronto-skyline-pictures-3r2ltrhezctjlizb.jpg)",

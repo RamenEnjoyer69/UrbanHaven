@@ -11,7 +11,7 @@ const BrowseCard = ({ image, title, number }) => {
 
   return (
     <a
-      href=""
+      href="rent"
       className="w-[300px] rounded-lg h-[200px] overflow-hidden "
       style={{
         backgroundImage: `url(${image})`,
