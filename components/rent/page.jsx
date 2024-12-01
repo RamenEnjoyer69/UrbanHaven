@@ -1,11 +1,19 @@
 'use client';
 
 import { useState } from "react";
-import { FiSearch, FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiSearch, FiChevronLeft, FiChevronRight, FiHeart } from "react-icons/fi";
+import { PiHeartBold, PiHeartFill } from 'react-icons/pi'
 import { sampleProperties } from "./property/property";
 import { Button } from "../ui/button";
 export default function Rent() {
-  const [saved, setSaved] = useState(false);
+  const [saved, setSaved] = useState({});
+  const toggleFavorite = (id) => {
+    setSaved((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id], // Toggle the saved state for the given property id
+    }));
+  };
+
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [filters, setFilters] = useState({
     search: "",
@@ -14,10 +22,11 @@ export default function Rent() {
     beds: null,
     date: null,
     location: "",
+    sort: "latest", // Added "sort" field for sorting by date
   });
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 12;
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
@@ -28,47 +37,44 @@ export default function Rent() {
     setActiveDropdown(null);
   };
 
-  const filteredProperties = sampleProperties.filter((property) => {
-    const matchesSearch = filters.search
-      ? [
-        property.title.toLowerCase(),
-        property.cityProvince.toLowerCase(),
-        property.communeSrok.toLowerCase(),
-        property.districtKhom.toLowerCase()
-      ].some(field => field.includes(filters.search.toLowerCase()))
-      : true;
+  const filteredProperties = sampleProperties
+    .filter((property) => {
+      const matchesSearch = filters.search
+        ? [
+          property.title.toLowerCase(),
+          property.cityProvince.toLowerCase(),
+          property.communeSrok.toLowerCase(),
+          property.districtKhom.toLowerCase(),
+        ].some((field) => field.includes(filters.search.toLowerCase()))
+        : true;
 
-    const matchesPrice =
-      filters.price === null ||
-      (filters.price === "under1000" && property.price < 1000) ||
-      (filters.price === "1000to2000" && property.price >= 1000 && property.price <= 2000) ||
-      (filters.price === "2000plus" && property.price > 2000);
+      const matchesPrice =
+        filters.price === null ||
+        (filters.price === "under1000" && property.price < 1000) ||
+        (filters.price === "1000to2000" && property.price >= 1000 && property.price <= 2000) ||
+        (filters.price === "2000plus" && property.price > 2000);
 
-    const matchesType = filters.propertyType ? property.type === filters.propertyType : true;
+      const matchesType = filters.propertyType ? property.type === filters.propertyType : true;
 
-    const matchesBeds = filters.beds ? property.bedroom === filters.beds : true;
+      const matchesBeds = filters.beds ? property.bedroom === filters.beds : true;
 
-    const matchesDate = filters.date
-      ? (() => {
-        const propertyDate = new Date(property.uploadDate);
-        const filterDate = new Date(filters.date);
-        return (
-          propertyDate.getFullYear() === filterDate.getFullYear() &&
-          propertyDate.getMonth() === filterDate.getMonth() &&
-          propertyDate.getDate() === filterDate.getDate()
-        );
-      })()
-      : true;
+      const matchesLocation = filters.location
+        ? [property.cityProvince, property.communeSrok, property.districtKhom]
+          .join(" ")
+          .toLowerCase()
+          .includes(filters.location.toLowerCase())
+        : true;
 
-    const matchesLocation = filters.location
-      ? [property.cityProvince, property.communeSrok, property.districtKhom]
-        .join(" ")
-        .toLowerCase()
-        .includes(filters.location.toLowerCase())
-      : true;
-
-    return matchesSearch && matchesPrice && matchesType && matchesBeds && matchesDate && matchesLocation;
-  });
+      return matchesSearch && matchesPrice && matchesType && matchesBeds && matchesLocation;
+    })
+    .sort((a, b) => {
+      if (filters.sort === "latest") {
+        return new Date(b.uploadDate) - new Date(a.uploadDate); // Sort by latest first
+      } else if (filters.sort === "oldest") {
+        return new Date(a.uploadDate) - new Date(b.uploadDate); // Sort by oldest first
+      }
+      return 0;
+    });
 
   const totalPages = Math.ceil(filteredProperties.length / itemsPerPage);
 
@@ -142,11 +148,14 @@ export default function Rent() {
       beds: null,
       date: null,
       location: "",
+      sort: "latest", // Reset sort to default "latest"
     });
   };
 
+
+
   return (
-    <div className="pt-28 px-4">
+    <div className="pt-14 px-4">
       <div className="flex gap-2">
         {/* Search Box */}
         <div className="relative">
@@ -257,15 +266,18 @@ export default function Rent() {
           )}
         </div>
 
-        {/* Date Filter */}
+        {/* Sort by Latest/Oldest */}
         <div className="relative">
-          <input
-            type="date"
-            value={filters.date || ""} // Ensure it uses an empty string if date is null
-            onChange={(e) => handleFilterChange("date", e.target.value)} // e.target.value will return the date as `YYYY-MM-DD`
+          <select
+            value={filters.sort || "latest"} // Default to "latest"
+            onChange={(e) => handleFilterChange("sort", e.target.value)}
             className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg"
-          />
+          >
+            <option value="latest">Latest</option>
+            <option value="oldest">Oldest</option>
+          </select>
         </div>
+
 
 
 
@@ -273,14 +285,14 @@ export default function Rent() {
         <Button onClick={clearFilters}>Clear Filters</Button>
       </div>
 
-      {/* Property Listing */}
-      <div className="mt-6 grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+      <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {getCurrentPageProperties().map((property) => (
           <a
-            href={`rent/details/${property.id}`}
             key={property.id}
-            className="select-none overflow-hidden w-full h-[400px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200"
+            href="/details"
+            className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
+            {/* Image Section */}
             <div className="h-[56.44%] w-full relative">
               <img
                 src={property.image}
@@ -288,17 +300,46 @@ export default function Rent() {
                 className="h-full object-cover w-full"
               />
 
+              {/* Special Badge */}
               {property.isSpecial && (
                 <div className="absolute top-3 left-3 bg-green-700 h-5 p-3 rounded-full grid place-content-center text-white text-sm">
                   Special
                 </div>
               )}
+
+              {/* Favorite Icon */}
+              {/* Favorite Icon */}
+              <div
+                className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${saved[property.id] ? "text-red-400" : "text-gray-400"
+                  }`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation(); // Prevent click from propagating to the <a>
+                  toggleFavorite(property.id);
+                }}
+              >
+                {!saved[property.id] ? (
+                  <PiHeartBold size={25} />
+                ) : (
+                  <PiHeartFill size={25} />
+                )}
+              </div>
+
             </div>
 
+            {/* Property Details */}
             <div className="flex flex-col py-4 px-4">
-              <h3 className="text-[1rem] font-bold">{property.title}</h3>
-              <h3 className="text-[1.2rem] font-bold text-green-700">Price : ${property.price}</h3>
+              {/* Property Type */}
+              <div className="flex items-center text-sm">
+                <div className="w-3 h-3 bg-green-700 rounded-full mr-1"></div>
+                <p className="text-gray-500">{property.type}</p>
+              </div>
 
+              {/* Price */}
+              <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
+              <h3 className="text-[1.5rem] font-bold">{property.id}</h3>
+
+              {/* Beds & Baths */}
               <div className="flex space-x-2 text-gray-500">
                 <p>
                   <span className="font-bold text-black">{property.bedroom}</span> bed
@@ -308,14 +349,17 @@ export default function Rent() {
                 </p>
               </div>
 
+              {/* Address */}
               <div className="text-gray-500 text-sm">
-                <p>{property.cityProvince}, {property.communeSrok}, {property.districtKhom}</p>
-                <p>Uploaded: {new Date(property.uploadDate).toLocaleDateString()}</p>
+                <p>{property.street}</p>
+                <p>{property.cityProvince}</p>
               </div>
             </div>
           </a>
         ))}
       </div>
+
+
 
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-4 mb-5">
