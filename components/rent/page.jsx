@@ -337,7 +337,7 @@ export default function Rent() {
 
               {/* Price */}
               <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
-              <h3 className="text-[1.5rem] font-bold">{property.id}</h3>
+
 
               {/* Beds & Baths */}
               <div className="flex space-x-2 text-gray-500">
