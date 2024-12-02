@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { PiHeartBold, PiHeartFill } from "react-icons/pi";
@@ -368,9 +369,9 @@ export default function Rent() {
 
       <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {getCurrentPageProperties().map((property) => (
-          <a
+          <Link
             key={property.id}
-            href="/details"
+            href={`/rent/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
             {/* Image Section */}
@@ -440,7 +441,7 @@ export default function Rent() {
                 <p>{property.cityProvince}</p>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
