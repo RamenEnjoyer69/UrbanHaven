@@ -1,7 +1,5 @@
-import Search from "@/components/icons/Search";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import React from "react";
 import Link from "./Link";
 
 const Topbar = () => {
@@ -20,7 +18,7 @@ const Topbar = () => {
       <div className="flex list-none gap-8 text-gray-600 items-center justify-center">
         <Link title="home" />
         <Link title="rent" />
-        <Link title="properties" />
+        <Link title="favorite" />
         <Link title="about" />
       </div>
 

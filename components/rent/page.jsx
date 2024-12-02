@@ -1,17 +1,51 @@
-'use client';
+"use client";
 
-import { useState } from "react";
-import { FiSearch, FiChevronLeft, FiChevronRight, FiHeart } from "react-icons/fi";
-import { PiHeartBold, PiHeartFill } from 'react-icons/pi'
-import { sampleProperties } from "./property/property";
+import { useEffect, useState } from "react";
+import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
+import { PiHeartBold, PiHeartFill } from "react-icons/pi";
 import { Button } from "../ui/button";
+import { sampleProperties } from "./property/property";
 export default function Rent() {
   const [saved, setSaved] = useState({});
+
+  // Load saved favorites from localStorage on component mount
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
+    setSaved(savedFavorites);
+
+    // Log the format of data stored in localStorage
+    const storedFavorites = localStorage.getItem("favorites");
+    console.log("Stored data in localStorage:", storedFavorites);
+    console.log("Type of data stored in localStorage:", typeof storedFavorites);
+
+    // If it's JSON, log the parsed object as well
+    if (storedFavorites) {
+      console.log("Parsed stored favorites:", JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  // Toggle favorite status and save it to localStorage
   const toggleFavorite = (id) => {
-    setSaved((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id], // Toggle the saved state for the given property id
-    }));
+    setSaved((prevState) => {
+      const updatedFavorites = {
+        ...prevState,
+        [id]: !prevState[id], // Toggle the saved state for the given property id
+      };
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
+      // Log the updated data
+      console.log("Updated Favorites:", updatedFavorites);
+
+      // Also log the stored data and its type after updating
+      const storedFavorites = localStorage.getItem("favorites");
+      console.log("Stored data in localStorage after update:", storedFavorites);
+      console.log(
+        "Type of data stored in localStorage after update:",
+        typeof storedFavorites
+      );
+
+      return updatedFavorites;
+    });
   };
 
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -41,31 +75,43 @@ export default function Rent() {
     .filter((property) => {
       const matchesSearch = filters.search
         ? [
-          property.title.toLowerCase(),
-          property.cityProvince.toLowerCase(),
-          property.communeSrok.toLowerCase(),
-          property.districtKhom.toLowerCase(),
-        ].some((field) => field.includes(filters.search.toLowerCase()))
+            property.title.toLowerCase(),
+            property.cityProvince.toLowerCase(),
+            property.communeSrok.toLowerCase(),
+            property.districtKhom.toLowerCase(),
+          ].some((field) => field.includes(filters.search.toLowerCase()))
         : true;
 
       const matchesPrice =
         filters.price === null ||
         (filters.price === "under1000" && property.price < 1000) ||
-        (filters.price === "1000to2000" && property.price >= 1000 && property.price <= 2000) ||
+        (filters.price === "1000to2000" &&
+          property.price >= 1000 &&
+          property.price <= 2000) ||
         (filters.price === "2000plus" && property.price > 2000);
 
-      const matchesType = filters.propertyType ? property.type === filters.propertyType : true;
+      const matchesType = filters.propertyType
+        ? property.type === filters.propertyType
+        : true;
 
-      const matchesBeds = filters.beds ? property.bedroom === filters.beds : true;
+      const matchesBeds = filters.beds
+        ? property.bedroom === filters.beds
+        : true;
 
       const matchesLocation = filters.location
         ? [property.cityProvince, property.communeSrok, property.districtKhom]
-          .join(" ")
-          .toLowerCase()
-          .includes(filters.location.toLowerCase())
+            .join(" ")
+            .toLowerCase()
+            .includes(filters.location.toLowerCase())
         : true;
 
-      return matchesSearch && matchesPrice && matchesType && matchesBeds && matchesLocation;
+      return (
+        matchesSearch &&
+        matchesPrice &&
+        matchesType &&
+        matchesBeds &&
+        matchesLocation
+      );
     })
     .sort((a, b) => {
       if (filters.sort === "latest") {
@@ -152,8 +198,6 @@ export default function Rent() {
     });
   };
 
-
-
   return (
     <div className="pt-14 px-4">
       <div className="flex gap-2">
@@ -167,7 +211,10 @@ export default function Rent() {
             value={filters.search} // Bind the input value to filters.search
             onChange={(e) => handleFilterChange("search", e.target.value)} // Update search state on change
           />
-          <FiSearch className="absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-500" size={20} />
+          <FiSearch
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-500"
+            size={20}
+          />
         </div>
 
         {/* Price Dropdown */}
@@ -187,13 +234,22 @@ export default function Rent() {
                 >
                   All
                 </li>
-                <li onClick={() => handleFilterChange("price", "under1000")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("price", "under1000")}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   Under $1,000
                 </li>
-                <li onClick={() => handleFilterChange("price", "1000to2000")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("price", "1000to2000")}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   $1,000 - $2,000
                 </li>
-                <li onClick={() => handleFilterChange("price", "2000plus")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("price", "2000plus")}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   Over $2,000
                 </li>
               </ul>
@@ -218,13 +274,24 @@ export default function Rent() {
                 >
                   All
                 </li>
-                <li onClick={() => handleFilterChange("propertyType", "Apartment")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() =>
+                    handleFilterChange("propertyType", "Apartment")
+                  }
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   Apartment
                 </li>
-                <li onClick={() => handleFilterChange("propertyType", "Townhome")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("propertyType", "Townhome")}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   Townhome
                 </li>
-                <li onClick={() => handleFilterChange("propertyType", "Condo")} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("propertyType", "Condo")}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   Condo
                 </li>
               </ul>
@@ -241,24 +308,42 @@ export default function Rent() {
             {getBedsLabel()}
           </button>
           {activeDropdown === "beds" && (
-            <div className="absolute z-10 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
+            <div className="absolute z-20 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
               <ul className="py-2">
-                <li onClick={() => handleFilterChange("beds", null)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", null)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   All
                 </li>
-                <li onClick={() => handleFilterChange("beds", 1)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", 1)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   1 Bed
                 </li>
-                <li onClick={() => handleFilterChange("beds", 2)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", 2)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   2 Beds
                 </li>
-                <li onClick={() => handleFilterChange("beds", 3)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", 3)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   3 Beds
                 </li>
-                <li onClick={() => handleFilterChange("beds", 4)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", 4)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   4 Beds
                 </li>
-                <li onClick={() => handleFilterChange("beds", 5)} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <li
+                  onClick={() => handleFilterChange("beds", 5)}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
                   5 Beds
                 </li>
               </ul>
@@ -277,10 +362,6 @@ export default function Rent() {
             <option value="oldest">Oldest</option>
           </select>
         </div>
-
-
-
-
 
         <Button onClick={clearFilters}>Clear Filters</Button>
       </div>
@@ -308,10 +389,10 @@ export default function Rent() {
               )}
 
               {/* Favorite Icon */}
-              {/* Favorite Icon */}
               <div
-                className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${saved[property.id] ? "text-red-400" : "text-gray-400"
-                  }`}
+                className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
+                  saved[property.id] ? "text-red-400" : "text-gray-400"
+                }`}
                 onClick={(event) => {
                   event.preventDefault();
                   event.stopPropagation(); // Prevent click from propagating to the <a>
@@ -324,7 +405,6 @@ export default function Rent() {
                   <PiHeartFill size={25} />
                 )}
               </div>
-
             </div>
 
             {/* Property Details */}
@@ -338,14 +418,19 @@ export default function Rent() {
               {/* Price */}
               <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
 
-
               {/* Beds & Baths */}
               <div className="flex space-x-2 text-gray-500">
                 <p>
-                  <span className="font-bold text-black">{property.bedroom}</span> bed
+                  <span className="font-bold text-black">
+                    {property.bedroom}
+                  </span>{" "}
+                  bed
                 </p>
                 <p>
-                  <span className="font-bold text-black">{property.bathroom}</span> bath
+                  <span className="font-bold text-black">
+                    {property.bathroom}
+                  </span>{" "}
+                  bath
                 </p>
               </div>
 
@@ -359,22 +444,30 @@ export default function Rent() {
         ))}
       </div>
 
-
-
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-4 mb-5">
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === 1 ? "border-gray-300 text-gray-400" : "border-gray-500 text-gray-700 hover:bg-gray-100"}`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
+            currentPage === 1
+              ? "border-gray-300 text-gray-400"
+              : "border-gray-500 text-gray-700 hover:bg-gray-100"
+          }`}
         >
           <FiChevronLeft /> Prev
         </button>
-        <span className="text-gray-700">Page {currentPage} of {totalPages}</span>
+        <span className="text-gray-700">
+          Page {currentPage} of {totalPages}
+        </span>
         <button
           onClick={() => handlePageChange("next")}
           disabled={currentPage === totalPages}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === totalPages ? "border-gray-300 text-gray-400" : "border-gray-500 text-gray-700 hover:bg-gray-100"}`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
+            currentPage === totalPages
+              ? "border-gray-300 text-gray-400"
+              : "border-gray-500 text-gray-700 hover:bg-gray-100"
+          }`}
         >
           Next <FiChevronRight />
         </button>
