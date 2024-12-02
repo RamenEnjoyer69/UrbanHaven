@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 * {
   scroll-behavior: smooth;
 }
-body {
+/* body {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @layer utilities {
   .text-balance {
@@ -76,6 +77,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    @apply font-quicksand;
   }
 }
 
@@ -113,4 +115,9 @@ body {
 }
 .animate-scroll {
   animation: scroll 50s linear infinite;
+}
+
+.form-input {
+  border: 5px solid #000000;
+  width: 100%;
 }
