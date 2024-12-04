@@ -7,6 +7,7 @@ import { sampleProperties } from "@/components/rent/property/property";
 import ContactForm from "@/components/contactForm/ContactForm";
 import { useEffect, useState } from "react";
 import React from "react";
+import Skeleton from "react-loading-skeleton"; // Import the Skeleton loader
 
 export default function PropertyDetail({ params }) {
   const { id } = React.use(params); // Unwrap the params Promise
@@ -22,10 +23,6 @@ export default function PropertyDetail({ params }) {
       setProperty(foundProperty); // Set the property to the found property
     }
   }, [id]);
-
-  if (!property) {
-    return <div>Property not found</div>; // Handle case when property is not found
-  }
 
   return (
     <div className="w-full min-h-screen">
@@ -44,27 +41,37 @@ export default function PropertyDetail({ params }) {
           {/* Property Images Section */}
           <div className="col-span-1 md:col-span-7">
             <div className="h-[300px] md:h-[500px] rounded-2xl grid grid-cols-12 gap-1 overflow-hidden">
+              {/* First image */}
               <div className="col-span-12 md:col-span-9 bg-gray-200">
-                <img
-                  src={property.images[0]}
-                  alt={property.title}
-                  className="h-full w-full object-cover"
-                />
+                {property ? (
+                  <img
+                    src={property.images[0]}
+                    alt={property.title}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <Skeleton height="100%" />
+                )}
               </div>
+              {/* Additional images */}
               <div className="col-span-12 md:col-span-3 grid grid-rows-3 gap-1">
-                {property.images.slice(1, 4).map((image, index) => (
-                  <a
-                    key={index}
-                    href={image}
-                    className={`bg-gray-${300 + index * 100} cursor-pointer hover:brightness-75 transition-all ease-in-out`}
-                  >
-                    <img
-                      src={image}
-                      alt={`Property image ${index + 1}`}
-                      className="h-full w-full object-cover"
-                    />
-                  </a>
-                ))}
+                {property
+                  ? property.images.slice(1, 4).map((image, index) => (
+                    <a
+                      key={index}
+                      href={image}
+                      className={`bg-gray-${300 + index * 100} cursor-pointer hover:brightness-75 transition-all ease-in-out`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Property image ${index + 1}`}
+                        className="h-full w-full object-cover"
+                      />
+                    </a>
+                  ))
+                  : Array.from({ length: 3 }).map((_, index) => (
+                    <Skeleton key={index} height="100%" />
+                  ))}
               </div>
             </div>
 
@@ -92,19 +99,43 @@ export default function PropertyDetail({ params }) {
 
               <div className="w-full space-y-3">
                 <p className="text-[1.75rem] md:text-[2rem] font-bold ">
-                  ${property.price} <span className="text-[1rem] text-gray-500">/mo</span>
+                  {property ? (
+                    <>
+                      ${property.price} <span className="text-[1rem] text-gray-500">/mo</span>
+                    </>
+                  ) : (
+                    <Skeleton width={100} />
+                  )}
                 </p>
                 <div className="flex">
                   <p className="mr-3 font-bold">
-                    {property.bedroom} <span className="font-normal text-gray-500">bed</span>
+                    {property ? (
+                      <>
+                        {property.bedroom} <span className="font-normal text-gray-500">bed</span>
+                      </>
+                    ) : (
+                      <Skeleton width={50} />
+                    )}
                   </p>
                   <p className="font-bold">
-                    {property.bathroom} <span className="font-normal text-gray-500">bath</span>
+                    {property ? (
+                      <>
+                        {property.bathroom} <span className="font-normal text-gray-500">bath</span>
+                      </>
+                    ) : (
+                      <Skeleton width={50} />
+                    )}
                   </p>
                 </div>
 
                 <p className="font-bold text-[1.25rem]">
-                  {property.street}, {property.cityProvince}
+                  {property ? (
+                    <>
+                      {property.street}, {property.cityProvince}
+                    </>
+                  ) : (
+                    <Skeleton width={200} />
+                  )}
                 </p>
               </div>
             </div>

@@ -6,24 +6,20 @@ import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { PiHeartBold, PiHeartFill } from "react-icons/pi";
 import { Button } from "../ui/button";
 import { sampleProperties } from "./property/property";
+
 export default function Rent() {
   const [saved, setSaved] = useState({});
-
-  // Load saved favorites from localStorage on component mount
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
     setSaved(savedFavorites);
 
-    // Log the format of data stored in localStorage
     const storedFavorites = localStorage.getItem("favorites");
 
-    // If it's JSON, log the parsed object as well
     if (storedFavorites) {
       console.log("Parsed stored favorites:", JSON.parse(storedFavorites));
     }
   }, []);
 
-  // Toggle favorite status and save it to localStorage
   const toggleFavorite = (id) => {
     setSaved((prevState) => {
       const updatedFavorites = {
@@ -32,10 +28,8 @@ export default function Rent() {
       };
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 
-      // Log the updated data
       console.log("Updated Favorites:", updatedFavorites);
 
-      // Also log the stored data and its type after updating
       const storedFavorites = localStorage.getItem("favorites");
       console.log("Stored data in localStorage after update:", storedFavorites);
       console.log(
@@ -367,7 +361,7 @@ export default function Rent() {
         {getCurrentPageProperties().map((property) => (
           <a
             key={property.id}
-            href={`/details/${property.id}`}
+            href={`/rent/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
             <div className="h-[56.44%] w-full relative">
