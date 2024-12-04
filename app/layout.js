@@ -3,6 +3,7 @@ import "./globals.css";
 import Navigations from "@/components/navigations/Navigations";
 import Footer from "@/components/footer/Footer";
 import { quicksand } from "@/utils/fonts";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "UrbanHaven",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${quicksand.variable} antialiased`}>
         <Navigations />
         {children}
+        <Toaster />
         <Footer />
       </body>
     </html>

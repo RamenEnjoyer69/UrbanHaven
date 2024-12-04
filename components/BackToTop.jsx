@@ -13,7 +13,6 @@ const BackToTop = () => {
     <div className="w-full grid place-items-center mb-10">
       <button
         onClick={top}
-        href=""
         className="text-[1.2rem] w-52 py-3 bg-purple-600 text-white rounded-full "
       >
         Back to top

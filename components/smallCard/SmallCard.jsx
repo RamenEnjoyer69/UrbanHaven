@@ -17,7 +17,7 @@ const SmallCard = ({
   return (
     <a
       // href={`/details/${id}`}
-      href="/details"
+      href={`/details/69`}
       className="select-none overflow-hidden w-[300px] h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200"
     >
       <div className="h-[56.44%] w-full relative">

@@ -18,9 +18,9 @@ const page = () => {
         </a>
       </div>
 
-      <div className="mx-[16%]">
-        <section className="w-full grid grid-cols-12 gap-4 py-5">
-          <div className="col-span-9">
+      <div className="mx-auto w-[65%]">
+        <section className="w-full grid grid-cols-10 gap-3 py-5">
+          <div className="col-span-7">
             <div className=" h-[500px] rounded-2xl grid grid-cols-12 gap-1 overflow-hidden">
               <div className="col-span-9 bg-gray-200">
                 <img
@@ -30,31 +30,40 @@ const page = () => {
                 />
               </div>
               <div className="col-span-3 grid grid-rows-3 gap-1">
-                <div className="bg-gray-300 cursor-pointer hover:brightness-75 transition-all ease-in-out ">
+                <a
+                  href="image"
+                  className="bg-gray-300 cursor-pointer hover:brightness-75 transition-all ease-in-out "
+                >
                   <img
                     src="https://ar.rdcpix.com/a7f7688ac37b584ba50f3bb725b92443c-f1134627828rd-w2048_h1536.webp"
                     alt=""
                     className="h-full w-full object-cover"
                   />
-                </div>
-                <div className="bg-gray-400 cursor-pointer hover:brightness-75 transition-all ease-in-out ">
+                </a>
+                <a
+                  href="image"
+                  className="bg-gray-400 cursor-pointer hover:brightness-75 transition-all ease-in-out "
+                >
                   <img
                     src="https://ar.rdcpix.com/a7f7688ac37b584ba50f3bb725b92443c-f2020301146rd-w2048_h1536.webp"
                     alt=""
                     className="h-full w-full object-cover"
                   />
-                </div>
-                <div className="bg-gray-500 cursor-pointer hover:brightness-75 transition-all ease-in-out ">
+                </a>
+                <a
+                  href="image"
+                  className="bg-gray-500 cursor-pointer hover:brightness-75 transition-all ease-in-out "
+                >
                   <img
                     src="https://ar.rdcpix.com/a7f7688ac37b584ba50f3bb725b92443c-f3139238151rd-w2048_h1536.webp"
                     alt=""
                     className="h-full w-full object-cover"
                   />
-                </div>
+                </a>
               </div>
             </div>
 
-            <div className=" w-full grid pt-5">
+            <div className=" w-full grid pt-3">
               <div className=" bg-white flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="w-4 h-4 rounded-full bg-green-700 mr-2"></div>
@@ -70,13 +79,33 @@ const page = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="w-full space-y-3">
+                <p className="text-[2rem] font-bold ">
+                  $69,000 <span className="text-[1rem] text-gray-500">/mo</span>
+                </p>
+                <div className="flex">
+                  <p className="mr-3 font-bold">
+                    2 <span className="font-normal text-gray-500">bed</span>
+                  </p>
+                  <p className="font-bold">
+                    2 <span className="font-normal text-gray-500">bath</span>
+                  </p>
+                </div>
+
+                <p className="font-bold text-[1.25rem]">
+                  15 Park Row Apt 8K, New York, NY 10038
+                </p>
+              </div>
             </div>
           </div>
-          <div className="border-gray-400 space-y-1 border-[1px] col-span-3 h-auto rounded-2xl p-4 text-gray-700">
-            <p className="text-xl text-gray-800 font-bold mb-5 mt-2">
-              Get in touch
-            </p>
-            <ContactForm />
+          <div className="col-span-3">
+            <div className="border-gray-400 space-y-1 border-[1px] h-auto rounded-2xl p-4 text-gray-700">
+              <p className="text-xl text-gray-800 font-bold mb-5 mt-2">
+                Get in touch
+              </p>
+              <ContactForm />
+            </div>
           </div>
         </section>
       </div>
