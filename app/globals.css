@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -121,3 +122,4 @@
   border: 5px solid #000000;
   width: 100%;
 }
+

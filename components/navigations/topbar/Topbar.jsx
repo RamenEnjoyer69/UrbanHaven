@@ -1,7 +1,5 @@
-import Search from "@/components/icons/Search";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import React from "react";
 import Link from "./Link";
 
 const Topbar = () => {
