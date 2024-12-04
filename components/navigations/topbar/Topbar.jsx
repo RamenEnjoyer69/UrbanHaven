@@ -18,7 +18,7 @@ const Topbar = () => {
       <div className="flex list-none gap-8 text-gray-600 items-center justify-center">
         <Link title="home" />
         <Link title="rent" />
-        <Link title="favorite" />
+        <Link title="favorites" />
         <Link title="about" />
       </div>
 
