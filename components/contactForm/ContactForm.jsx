@@ -42,7 +42,7 @@ const ContactForm = () => {
             title: "Error",
             description: `Failed to send email, please try again later..`,
             variant: "destructive",
-            action: <ToastAction altText="Try again">Try again</ToastAction>,
+            // action: <ToastAction altText="Try again">Try again</ToastAction>,
           });
         }
       );

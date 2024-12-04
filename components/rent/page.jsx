@@ -369,9 +369,9 @@ export default function Rent() {
 
       <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {getCurrentPageProperties().map((property) => (
-          <Link
+          <a
             key={property.id}
-            href={`/rent/${property.id}`}
+            href={`/details/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
             {/* Image Section */}
@@ -441,7 +441,7 @@ export default function Rent() {
                 <p>{property.cityProvince}</p>
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
 
