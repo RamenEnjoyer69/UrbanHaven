@@ -67,9 +67,9 @@ const Favorite = () => {
               {/* Image Section */}
               <div className="h-[56.44%] w-full relative">
                 <img
-                  src={property.image}
-                  alt={property.title}
-                  className="h-full object-cover w-full"
+                  src={property.images[0]} // Access the first image in the array
+                  alt={property.title} // Use the property title for accessibility
+                  className="h-full object-cover w-full" // Styling classes
                 />
 
                 {/* Special Badge */}
@@ -81,9 +81,8 @@ const Favorite = () => {
 
                 {/* Favorite Icon */}
                 <div
-                  className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
-                    saved[property.id] ? "text-red-400" : "text-gray-400"
-                  }`}
+                  className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${saved[property.id] ? "text-red-400" : "text-gray-400"
+                    }`}
                   onClick={(event) => {
                     event.preventDefault();
                     event.stopPropagation(); // Prevent click from propagating to the <a>
@@ -146,11 +145,10 @@ const Favorite = () => {
           <button
             onClick={() => handlePageChange("prev")}
             disabled={currentPage === 1}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
-              currentPage === 1
+            className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === 1
                 ? "border-gray-300 text-gray-400"
                 : "border-gray-500 text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             <FiChevronLeft /> Prev
           </button>
@@ -160,11 +158,10 @@ const Favorite = () => {
           <button
             onClick={() => handlePageChange("next")}
             disabled={currentPage === totalPages}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
-              currentPage === totalPages
+            className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === totalPages
                 ? "border-gray-300 text-gray-400"
                 : "border-gray-500 text-gray-700 hover:bg-gray-100"
-            }`}
+              }`}
           >
             Next <FiChevronRight />
           </button>

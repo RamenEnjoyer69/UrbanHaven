@@ -16,8 +16,6 @@ export default function Rent() {
 
     // Log the format of data stored in localStorage
     const storedFavorites = localStorage.getItem("favorites");
-    console.log("Stored data in localStorage:", storedFavorites);
-    console.log("Type of data stored in localStorage:", typeof storedFavorites);
 
     // If it's JSON, log the parsed object as well
     if (storedFavorites) {
@@ -76,11 +74,11 @@ export default function Rent() {
     .filter((property) => {
       const matchesSearch = filters.search
         ? [
-            property.title.toLowerCase(),
-            property.cityProvince.toLowerCase(),
-            property.communeSrok.toLowerCase(),
-            property.districtKhom.toLowerCase(),
-          ].some((field) => field.includes(filters.search.toLowerCase()))
+          property.title.toLowerCase(),
+          property.cityProvince.toLowerCase(),
+          property.communeSrok.toLowerCase(),
+          property.districtKhom.toLowerCase(),
+        ].some((field) => field.includes(filters.search.toLowerCase()))
         : true;
 
       const matchesPrice =
@@ -101,9 +99,9 @@ export default function Rent() {
 
       const matchesLocation = filters.location
         ? [property.cityProvince, property.communeSrok, property.districtKhom]
-            .join(" ")
-            .toLowerCase()
-            .includes(filters.location.toLowerCase())
+          .join(" ")
+          .toLowerCase()
+          .includes(filters.location.toLowerCase())
         : true;
 
       return (
@@ -201,16 +199,16 @@ export default function Rent() {
 
   return (
     <div className="pt-14 px-4">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {/* Search Box */}
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <input
             type="text"
             id="search"
             className="w-full px-12 py-2 rounded-full border border-gray-400"
             placeholder="Search"
-            value={filters.search} // Bind the input value to filters.search
-            onChange={(e) => handleFilterChange("search", e.target.value)} // Update search state on change
+            value={filters.search}
+            onChange={(e) => handleFilterChange("search", e.target.value)}
           />
           <FiSearch
             className="absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-500"
@@ -230,7 +228,7 @@ export default function Rent() {
             <div className="absolute z-10 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
               <ul className="py-2">
                 <li
-                  onClick={() => handleFilterChange("price", null)} // null to show all properties
+                  onClick={() => handleFilterChange("price", null)}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   All
@@ -270,15 +268,13 @@ export default function Rent() {
             <div className="absolute z-10 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
               <ul className="py-2">
                 <li
-                  onClick={() => handleFilterChange("propertyType", null)} // Set to null to reset the filter and show all types
+                  onClick={() => handleFilterChange("propertyType", null)}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   All
                 </li>
                 <li
-                  onClick={() =>
-                    handleFilterChange("propertyType", "Apartment")
-                  }
+                  onClick={() => handleFilterChange("propertyType", "Apartment")}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   Apartment
@@ -355,7 +351,7 @@ export default function Rent() {
         {/* Sort by Latest/Oldest */}
         <div className="relative">
           <select
-            value={filters.sort || "latest"} // Default to "latest"
+            value={filters.sort || "latest"}
             onChange={(e) => handleFilterChange("sort", e.target.value)}
             className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg"
           >
@@ -374,68 +370,45 @@ export default function Rent() {
             href={`/rent/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
-            {/* Image Section */}
             <div className="h-[56.44%] w-full relative">
               <img
-                src={property.image}
-                alt={property.title}
-                className="h-full object-cover w-full"
+                src={property.images[0]} // Access the first image in the array
+                alt={property.title} // Use the property title for accessibility
+                className="h-full object-cover w-full" // Styling classes
               />
 
-              {/* Special Badge */}
               {property.isSpecial && (
                 <div className="absolute top-3 left-3 bg-green-700 h-5 p-3 rounded-full grid place-content-center text-white text-sm">
                   Special
                 </div>
               )}
-
-              {/* Favorite Icon */}
               <div
-                className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
-                  saved[property.id] ? "text-red-400" : "text-gray-400"
-                }`}
+                className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${saved[property.id] ? "text-red-400" : "text-gray-400"
+                  }`}
                 onClick={(event) => {
                   event.preventDefault();
-                  event.stopPropagation(); // Prevent click from propagating to the <a>
+                  event.stopPropagation();
                   toggleFavorite(property.id);
                 }}
               >
-                {!saved[property.id] ? (
-                  <PiHeartBold size={25} />
-                ) : (
-                  <PiHeartFill size={25} />
-                )}
+                {!saved[property.id] ? <PiHeartBold size={25} /> : <PiHeartFill size={25} />}
               </div>
             </div>
 
-            {/* Property Details */}
             <div className="flex flex-col py-4 px-4">
-              {/* Property Type */}
               <div className="flex items-center text-sm">
                 <div className="w-3 h-3 bg-green-700 rounded-full mr-1"></div>
                 <p className="text-gray-500">{property.type}</p>
               </div>
-
-              {/* Price */}
               <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
-
-              {/* Beds & Baths */}
               <div className="flex space-x-2 text-gray-500">
                 <p>
-                  <span className="font-bold text-black">
-                    {property.bedroom}
-                  </span>{" "}
-                  bed
+                  <span className="font-bold text-black">{property.bedroom}</span> bed
                 </p>
                 <p>
-                  <span className="font-bold text-black">
-                    {property.bathroom}
-                  </span>{" "}
-                  bath
+                  <span className="font-bold text-black">{property.bathroom}</span> bath
                 </p>
               </div>
-
-              {/* Address */}
               <div className="text-gray-500 text-sm">
                 <p>{property.street}</p>
                 <p>{property.cityProvince}</p>
@@ -445,16 +418,14 @@ export default function Rent() {
         ))}
       </div>
 
-      {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-4 mb-5">
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
-            currentPage === 1
-              ? "border-gray-300 text-gray-400"
-              : "border-gray-500 text-gray-700 hover:bg-gray-100"
-          }`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === 1
+            ? "border-gray-300 text-gray-400"
+            : "border-gray-500 text-gray-700 hover:bg-gray-100"
+            }`}
         >
           <FiChevronLeft /> Prev
         </button>
@@ -464,15 +435,15 @@ export default function Rent() {
         <button
           onClick={() => handlePageChange("next")}
           disabled={currentPage === totalPages}
-          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
-            currentPage === totalPages
-              ? "border-gray-300 text-gray-400"
-              : "border-gray-500 text-gray-700 hover:bg-gray-100"
-          }`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === totalPages
+            ? "border-gray-300 text-gray-400"
+            : "border-gray-500 text-gray-700 hover:bg-gray-100"
+            }`}
         >
           Next <FiChevronRight />
         </button>
       </div>
     </div>
   );
+
 }

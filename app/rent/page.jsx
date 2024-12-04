@@ -4,9 +4,10 @@ import Rent from "@/components/rent/page";
 
 const RentPage = () => {
   return (
-    <div className="mx-auto w-[70%]  h-auto min-h-[100vh]">
+    <div className="mx-auto w-[90%] sm:w-[80%] md:w-[70%] h-auto min-h-[100vh]">
       <Rent />
     </div>
+
   );
 };
 
