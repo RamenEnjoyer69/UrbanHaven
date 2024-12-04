@@ -12,17 +12,18 @@ const BrowseCard = ({ image, title, number }) => {
   return (
     <a
       href="rent"
-      className="w-[300px] rounded-lg h-[200px] overflow-hidden "
+      className="relative w-full h-48 sm:h-52 md:h-52 lg:h-52 rounded-lg overflow-hidden shadow-md"
       style={{
         backgroundImage: `url(${image})`,
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <div className="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent flex p-4 ">
-        <div className="w-full font-extrabold text-white hover:underline">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent p-4 flex flex-col justify-between">
+        <div className="text-white font-extrabold text-sm md:text-base lg:text-lg">
           {title}
         </div>
-        <div className=" h-6 p-2 rounded-full bg-white grid place-content-center text-sm">
+        <div className="w-12 h-6 rounded-full bg-white text-black text-center font-semibold text-xs flex items-center justify-center">
           {formatNum(number)}
         </div>
       </div>

@@ -4,12 +4,12 @@ import BrowseCard from "./BrowseCard";
 
 const Browse = () => {
   return (
-    <div className="min-h-96 md:mx-[10%] lg:mx-[16.5%] lg:px-4 mt-14 mb-16 flex flex-col">
-      <h3 className="font-bold text-[1.5rem] mb-5">
+    <div className="min-h-96 px-4 md:px-[10%] lg:px-[16.5%] mt-14 mb-16 flex flex-col">
+      <h3 className="font-bold text-xl md:text-2xl lg:text-[1.5rem] mb-5 px-5">
         Browse Homes By Categories
       </h3>
 
-      <div className="grid grid-cols-4 gap-4 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 place-items-center px-5">
         <BrowseCard
           image="https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
           title="Newest Listings"
@@ -22,12 +22,12 @@ const Browse = () => {
         />
         <BrowseCard
           image="https://ap.rdcpix.com/ebda49aafcd917e2aece8e7506d4c87bl-m2626022673rd-w960_h720.webp"
-          title="Price reduced"
+          title="Price Reduced"
           number={956}
         />
         <BrowseCard
           image="https://ap.rdcpix.com/d28f3d7a67a2f15120bd213565ea4381l-m3618238627rd-w1280_h960.webp"
-          title="Single family homes"
+          title="Single Family Homes"
           number={640}
         />
         <BrowseCard

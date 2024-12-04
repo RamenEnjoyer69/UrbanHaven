@@ -199,6 +199,10 @@ export default function Rent() {
     });
   };
 
+  function formatNumber(num) {
+    return num.toLocaleString();
+  }
+
   return (
     <div className="pt-14 px-4">
       <div className="flex gap-2">
@@ -417,7 +421,9 @@ export default function Rent() {
               </div>
 
               {/* Price */}
-              <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
+              <h3 className="text-[1.5rem] font-bold">
+                ${formatNumber(property.price)}
+              </h3>
 
               {/* Beds & Baths */}
               <div className="flex space-x-2 text-gray-500">

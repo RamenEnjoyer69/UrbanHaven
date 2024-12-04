@@ -4,14 +4,9 @@ import SmallCard from "../smallCard/SmallCard";
 
 const NewListings = () => {
   return (
-    <div className="min-h-96 mx-[16.5%] px-4 mt-14 mb-16 flex flex-col">
-      <SectionHeading
-        title="New Listings"
-        location="New York"
-        additional={""}
-      />
-
-      <div className="grid grid-cols-4 gap-3 place-items-center w-full h-full">
+    <div className="min-h-96 mx-4 sm:mx-6 md:mx-[10%] lg:mx-[16.5%] px-4 mt-14 mb-16 flex flex-col">
+      <SectionHeading title="New Listings" location="New York" additional="" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <SmallCard
           image="https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
           type="Apartment"
