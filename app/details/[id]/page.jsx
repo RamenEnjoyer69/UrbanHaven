@@ -55,13 +55,13 @@ const detailsPage = () => {
                   </Avatar> */}
 
                   <div className="flex items-center">
-                    <a href="#owner_info">
+                    <Link href="#owner_info">
                       <img
                         src="/images/a.jpg"
                         alt=""
                         className="w-10 h-10 rounded-full"
                       />
-                    </a>
+                    </Link>
 
                     <div className="ml-3 ">
                       <p className="font-bold">Ana de Armas</p>
@@ -116,7 +116,7 @@ const detailsPage = () => {
       <div className="mx-auto w-[65%] mb-40">
         <section id="owner_info" className="mt-10">
           <p className="font-bold text-[22px] "> Meet your landlord</p>
-          <div className="flex gap-40 mt-5">
+          <div className="flex gap-20 mt-5">
             <LandlordInfo />
 
             <div className="">

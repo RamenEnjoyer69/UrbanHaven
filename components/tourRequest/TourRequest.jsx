@@ -24,7 +24,7 @@ const TourRequest = () => {
           <p className="font-bold">Dec 13</p>
         </div>
         <div className="cursor-pointer border-[1px] border-black rounded-lg p-2 w-36 grid place-items-center">
-          <p className="">See more</p>
+          <p className="text-gray-500">See more</p>
         </div>
       </div>
     </div>
