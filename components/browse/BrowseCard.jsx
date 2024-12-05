@@ -19,7 +19,7 @@ const BrowseCard = ({ image, title, number }) => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent p-4 flex flex-col justify-between">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent p-4 flex flex-col md:flex-row lg:flex-row justify-between">
         <div className="text-white font-extrabold text-sm md:text-base lg:text-lg">
           {title}
         </div>
