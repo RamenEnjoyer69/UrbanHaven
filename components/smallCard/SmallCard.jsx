@@ -20,7 +20,7 @@ const SmallCard = ({
       className="select-none overflow-hidden w-full max-w-[300px] sm:max-w-[280px] md:max-w-[260px] lg:max-w-[300px] xl:max-w-[410px] h-[356px] rounded-2xl border border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200"
     >
       {/* Image Container */}
-      <div className="h-[60%] w-full relative">
+      <div className="h-[56%] w-full relative">
         <img src={image} alt="" className="h-full object-cover w-full" />
 
         {/* Special Badge */}
@@ -53,7 +53,9 @@ const SmallCard = ({
           <div className="w-3 h-3 bg-green-700 rounded-full mr-1"></div>
           <p className="text-gray-500 line-clamp-1">{type}</p>
         </div>
-        <h3 className="text-lg md:text-xl font-bold line-clamp-1">{price}</h3>
+        <h3 className="text-lg lg:text-[1.5rem] lg:my-2 font-bold line-clamp-1">
+          {price}
+        </h3>
         <div className="flex space-x-2 text-gray-500 text-sm md:text-base">
           <p>
             <span className="font-bold text-black">{bed}</span> bed
