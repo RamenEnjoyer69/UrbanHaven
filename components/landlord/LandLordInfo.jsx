@@ -1,5 +1,7 @@
 import { RiShieldCheckFill } from "react-icons/ri";
 import { MdOutlineWorkOutline } from "react-icons/md";
+import { LiaBirthdayCakeSolid } from "react-icons/lia";
+import { TbMessageLanguage } from "react-icons/tb";
 
 const LandlordInfo = () => {
   return (
@@ -39,10 +41,18 @@ const LandlordInfo = () => {
         </div>
       </div>
 
-      <div className="mt-5">
-        <div className="flex items-center gap-1">
-          <MdOutlineWorkOutline />
+      <div className="mt-8 space-y-3">
+        <div className="flex items-center gap-3">
+          <LiaBirthdayCakeSolid size={25} />
+          <p>Born in 1988</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <MdOutlineWorkOutline size={25} />
           <p>My work: Actress</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <TbMessageLanguage size={25} />
+          <p>Speaks Spanish and English</p>
         </div>
       </div>
     </div>

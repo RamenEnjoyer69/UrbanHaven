@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import Link from "./Link";
+import NavLink from "./Link";
 
 const Topbar = () => {
   return (
@@ -10,16 +10,16 @@ const Topbar = () => {
       </div> */}
 
       <div className="text-[1.5rem] text-gray-600 font-semibold">
-        <a href="home">
+        <a href="/home">
           <img src="/images/logo_purple.png" alt="" className="h-10" />
         </a>
         {/* UrbanHaven */}
       </div>
       <div className="flex list-none gap-8 text-gray-600 items-center justify-center">
-        <Link title="home" />
-        <Link title="rent" />
-        <Link title="favorite" />
-        <Link title="about" />
+        <NavLink title="home" />
+        <NavLink title="rent" />
+        <NavLink title="favorite" />
+        <NavLink title="about" />
       </div>
 
       <div className="flex justify-end ">

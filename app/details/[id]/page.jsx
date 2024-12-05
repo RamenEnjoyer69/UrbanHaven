@@ -1,3 +1,5 @@
+"use client";
+
 import { IoIosArrowBack } from "react-icons/io";
 import { HiOutlineMail, HiPhone } from "react-icons/hi";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
@@ -10,8 +12,17 @@ import ImageContainer from "@/components/ImageContainer";
 import TourRequest from "@/components/tourRequest/TourRequest";
 import Link from "next/link";
 import LandlordInfo from "@/components/landlord/LandlordInfo";
+import Map from "@/components/map/Map";
+import { useMemo } from "react";
+import dynamic from "next/dynamic";
 
 const detailsPage = () => {
+  const location = "cambodia";
+
+  // const Map = dynamic(() => import("@/components/map/Map"), {
+  //   ssr: false, // Disable server-side rendering
+  // });
+
   return (
     <div className="w-full min-h-[100vh]">
       <div className="w-full h-14 text-black px-[16%] bg-gray-100 flex items-center ">
@@ -95,11 +106,7 @@ const detailsPage = () => {
                 Property Details
               </section>
 
-              <section className="mt-10 font-bold text-[22px]">
-                Where you'll be
-              </section>
-
-              <section className="mb-20"></section>
+              {/* <section className="mb-10"></section> */}
             </div>
           </div>
           <div className="col-span-3">
@@ -114,6 +121,12 @@ const detailsPage = () => {
       </div>
 
       <div className="mx-auto w-[65%] mb-40">
+        <section className="mt-10 ">
+          <p className="font-bold text-[22px]">Where you'll be</p>
+
+          <Map />
+        </section>
+
         <section id="owner_info" className="mt-10">
           <p className="font-bold text-[22px] "> Meet your landlord</p>
           <div className="flex gap-20 mt-5">
