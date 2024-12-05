@@ -124,7 +124,8 @@ const detailsPage = () => {
         <section className="mt-10 ">
           <p className="font-bold text-[22px]">Where you'll be</p>
 
-          <Map />
+          {/* <Map location={[40.7128, -74.006]} zoom={12} /> */}
+          <Map location={[11.5564, 104.9282]} zoom={12} />
         </section>
 
         <section id="owner_info" className="mt-10">
