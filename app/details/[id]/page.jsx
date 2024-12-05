@@ -15,6 +15,7 @@ import LandlordInfo from "@/components/landlord/LandlordInfo";
 import Map from "@/components/map/Map";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
+import PropertyDetails from "@/components/propertyDetails/PropertyDetails";
 
 const detailsPage = () => {
   const location = "cambodia";
@@ -101,10 +102,9 @@ const detailsPage = () => {
               <section className="mt-10">
                 <TourRequest />
               </section>
-
-              <section className="mt-10 font-bold text-[22px]">
-                Property Details
-              </section>
+              <hr className="w-full border-gray-300 mt-8" />
+              <PropertyDetails />
+              <hr className="w-full border-gray-300 mt-10" />
 
               {/* <section className="mb-10"></section> */}
             </div>
@@ -126,14 +126,18 @@ const detailsPage = () => {
 
           {/* <Map location={[40.7128, -74.006]} zoom={12} /> */}
           <Map location={[11.5564, 104.9282]} zoom={12} />
-        </section>
 
+          <p className="mt-5 text-[1.15rem]">
+            We verified that this listing's location is accurate.
+          </p>
+        </section>
+        <hr className="w-full border-gray-300 mt-8" />
         <section id="owner_info" className="mt-10">
           <p className="font-bold text-[22px] "> Meet your landlord</p>
           <div className="flex gap-20 mt-5">
             <LandlordInfo />
 
-            <div className="">
+            <div className="w-full">
               <div>
                 <p className="font-bold text-[1.25rem]">Landlord details</p>
 

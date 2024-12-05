@@ -2,6 +2,7 @@ import { RiShieldCheckFill } from "react-icons/ri";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { TbMessageLanguage } from "react-icons/tb";
+import { IoMdStar } from "react-icons/io";
 
 const LandlordInfo = () => {
   return (
@@ -25,13 +26,15 @@ const LandlordInfo = () => {
 
         <div className="grid place-items-start pr-9">
           <div>
-            <p className="font-bold text-[1.5rem]">37</p>
+            <p className="font-bold text-[1.5rem]">137</p>
             <p className="text-[0.7rem]">Properties</p>
           </div>
           <hr className="w-full border-gray-300 my-2" />
           <div>
-            <p className="font-bold text-[1.5rem]">0</p>
-            <p className="text-[0.7rem]">Violations</p>
+            <div className="font-bold text-[1.5rem] flex items-center">
+              4.92 <IoMdStar size={17} />
+            </div>
+            <p className="text-[0.7rem]">Rating</p>
           </div>
           <hr className="w-full border-gray-300 my-2" />
           <div>

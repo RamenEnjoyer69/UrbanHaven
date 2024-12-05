@@ -29,8 +29,8 @@ const Map = ({ center, zoom }) => {
   if (!isInitialized) return null;
 
   const customIcon = new L.Icon({
-    iconUrl: "/images/marker.png",
-    iconSize: [56, 56],
+    iconUrl: "/images/marker1-nobg.png",
+    iconSize: [80, 80],
     iconAnchor: [16, 32], // The point of the icon which will correspond to the marker's location
     popupAnchor: [0, -32], // Position of the popup
   });
