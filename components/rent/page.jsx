@@ -6,26 +6,20 @@ import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { PiHeartBold, PiHeartFill } from "react-icons/pi";
 import { Button } from "../ui/button";
 import { sampleProperties } from "./property/property";
+
 export default function Rent() {
   const [saved, setSaved] = useState({});
-
-  // Load saved favorites from localStorage on component mount
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
     setSaved(savedFavorites);
 
-    // Log the format of data stored in localStorage
     const storedFavorites = localStorage.getItem("favorites");
-    console.log("Stored data in localStorage:", storedFavorites);
-    console.log("Type of data stored in localStorage:", typeof storedFavorites);
 
-    // If it's JSON, log the parsed object as well
     if (storedFavorites) {
       console.log("Parsed stored favorites:", JSON.parse(storedFavorites));
     }
   }, []);
 
-  // Toggle favorite status and save it to localStorage
   const toggleFavorite = (id) => {
     setSaved((prevState) => {
       const updatedFavorites = {
@@ -34,10 +28,8 @@ export default function Rent() {
       };
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
 
-      // Log the updated data
       console.log("Updated Favorites:", updatedFavorites);
 
-      // Also log the stored data and its type after updating
       const storedFavorites = localStorage.getItem("favorites");
       console.log("Stored data in localStorage after update:", storedFavorites);
       console.log(
@@ -207,7 +199,7 @@ export default function Rent() {
     <div className="pt-14 px-4">
       <div className="flex gap-2 z-50">
         {/* Search Box */}
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <input
             type="text"
             id="search"
@@ -235,7 +227,7 @@ export default function Rent() {
             <div className="absolute z-10 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
               <ul className="py-2">
                 <li
-                  onClick={() => handleFilterChange("price", null)} // null to show all properties
+                  onClick={() => handleFilterChange("price", null)}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   All
@@ -275,7 +267,7 @@ export default function Rent() {
             <div className="absolute z-10 mt-2 bg-white border border-gray-300 rounded-lg shadow-md w-48">
               <ul className="py-2">
                 <li
-                  onClick={() => handleFilterChange("propertyType", null)} // Set to null to reset the filter and show all types
+                  onClick={() => handleFilterChange("propertyType", null)}
                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
                 >
                   All
@@ -360,7 +352,7 @@ export default function Rent() {
         {/* Sort by Latest/Oldest */}
         <div className="relative">
           <select
-            value={filters.sort || "latest"} // Default to "latest"
+            value={filters.sort || "latest"}
             onChange={(e) => handleFilterChange("sort", e.target.value)}
             className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg"
           >
@@ -376,32 +368,28 @@ export default function Rent() {
         {getCurrentPageProperties().map((property) => (
           <a
             key={property.id}
-            href={`/details/${property.id}`}
+            href={`/rent/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
-            {/* Image Section */}
             <div className="h-[56.44%] w-full relative">
               <img
-                src={property.image}
-                alt={property.title}
-                className="h-full object-cover w-full"
+                src={property.images[0]} // Access the first image in the array
+                alt={property.title} // Use the property title for accessibility
+                className="h-full object-cover w-full" // Styling classes
               />
 
-              {/* Special Badge */}
               {property.isSpecial && (
                 <div className="absolute top-3 left-3 bg-green-700 h-5 p-3 rounded-full grid place-content-center text-white text-sm">
                   Special
                 </div>
               )}
-
-              {/* Favorite Icon */}
               <div
                 className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
                   saved[property.id] ? "text-red-400" : "text-gray-400"
                 }`}
                 onClick={(event) => {
                   event.preventDefault();
-                  event.stopPropagation(); // Prevent click from propagating to the <a>
+                  event.stopPropagation();
                   toggleFavorite(property.id);
                 }}
               >
@@ -413,9 +401,7 @@ export default function Rent() {
               </div>
             </div>
 
-            {/* Property Details */}
             <div className="flex flex-col py-4 px-4">
-              {/* Property Type */}
               <div className="flex items-center text-sm">
                 <div className="w-3 h-3 bg-green-700 rounded-full mr-1"></div>
                 <p className="text-gray-500">{property.type}</p>
@@ -441,8 +427,6 @@ export default function Rent() {
                   bath
                 </p>
               </div>
-
-              {/* Address */}
               <div className="text-gray-500 text-sm">
                 <p>{property.street}</p>
                 <p>{property.cityProvince}</p>
@@ -452,7 +436,6 @@ export default function Rent() {
         ))}
       </div>
 
-      {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-4 mb-5">
         <button
           onClick={() => handlePageChange("prev")}

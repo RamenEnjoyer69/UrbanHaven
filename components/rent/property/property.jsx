@@ -16,7 +16,12 @@ export const sampleProperties = [
         cityProvince: "Phnom Penh",
         communeSrok: "Tuol Kork",
         districtKhom: "Boeung Kak 2",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-12-01T14:00:00Z"
     },
     {
@@ -36,7 +41,12 @@ export const sampleProperties = [
         cityProvince: "Siem Reap",
         communeSrok: "Svay Dangkum",
         districtKhom: "Sala Kamreuk",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-28T10:30:00Z"
     },
     {
@@ -56,7 +66,12 @@ export const sampleProperties = [
         cityProvince: "Battambang",
         communeSrok: "Svay Por",
         districtKhom: "Chamkar Samraong",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-25T08:45:00Z"
     },
     {
@@ -76,7 +91,12 @@ export const sampleProperties = [
         cityProvince: "Sihanoukville",
         communeSrok: "Sangkat 3",
         districtKhom: "Preah Sihanouk",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-20T15:00:00Z"
     },
     {
@@ -96,7 +116,12 @@ export const sampleProperties = [
         cityProvince: "Kampong Cham",
         communeSrok: "Veal Vong",
         districtKhom: "Sangkat 1",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-15T09:15:00Z"
     },
     {
@@ -116,7 +141,12 @@ export const sampleProperties = [
         cityProvince: "Kep",
         communeSrok: "Angkaol",
         districtKhom: "Prey Thum",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-10T11:30:00Z"
     },
     {
@@ -136,7 +166,12 @@ export const sampleProperties = [
         cityProvince: "Takeo",
         communeSrok: "Doun Kaev",
         districtKhom: "Roka",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-05T13:00:00Z"
     },
     {
@@ -156,7 +191,12 @@ export const sampleProperties = [
         cityProvince: "Kampot",
         communeSrok: "Teuk Chhou",
         districtKhom: "Mak Prang",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-10-30T14:20:00Z"
     },
     {
@@ -176,7 +216,12 @@ export const sampleProperties = [
         cityProvince: "Ratanakiri",
         communeSrok: "Banlung",
         districtKhom: "Yeak Laom",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-10-25T12:30:00Z"
     },
     {
@@ -196,7 +241,12 @@ export const sampleProperties = [
         cityProvince: "Koh Kong",
         communeSrok: "Mondul Seima",
         districtKhom: "Smach Meanchey",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-10-20T16:00:00Z"
     },
     {
@@ -216,7 +266,12 @@ export const sampleProperties = [
         cityProvince: "Sihanoukville",
         communeSrok: "Sangkat 4",
         districtKhom: "Preah Sihanouk",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-12-01T16:00:00Z"
     },
     {
@@ -236,7 +291,12 @@ export const sampleProperties = [
         cityProvince: "Phnom Penh",
         communeSrok: "Chroy Changvar",
         districtKhom: "Prampi Makara",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-30T17:30:00Z"
     },
     {
@@ -256,7 +316,12 @@ export const sampleProperties = [
         cityProvince: "Kampong Speu",
         communeSrok: "Angk Snuol",
         districtKhom: "Por Senchey",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-28T12:00:00Z"
     },
     {
@@ -276,7 +341,12 @@ export const sampleProperties = [
         cityProvince: "Preah Sihanouk",
         communeSrok: "Sangkat 1",
         districtKhom: "Sihanoukville",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-27T11:00:00Z"
     },
     {
@@ -296,7 +366,12 @@ export const sampleProperties = [
         cityProvince: "Siem Reap",
         communeSrok: "Siem Reap",
         districtKhom: "Svay Dangkum",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-25T09:30:00Z"
     },
     {
@@ -316,7 +391,12 @@ export const sampleProperties = [
         cityProvince: "Koh Kong",
         communeSrok: "Mondul Seima",
         districtKhom: "Smach Meanchey",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-22T10:00:00Z"
     },
     {
@@ -336,7 +416,12 @@ export const sampleProperties = [
         cityProvince: "Battambang",
         communeSrok: "Ratanak Mondul",
         districtKhom: "Svay Por",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-21T15:15:00Z"
     },
     {
@@ -356,7 +441,12 @@ export const sampleProperties = [
         cityProvince: "Kampong Cham",
         communeSrok: "Prey Chhor",
         districtKhom: "Sangkat 3",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-18T13:20:00Z"
     },
     {
@@ -376,7 +466,12 @@ export const sampleProperties = [
         cityProvince: "Kampot",
         communeSrok: "Teuk Chhou",
         districtKhom: "Mak Prang",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-15T12:10:00Z"
     },
     {
@@ -396,10 +491,265 @@ export const sampleProperties = [
         cityProvince: "Phnom Penh",
         communeSrok: "Chamkarmon",
         districtKhom: "Tonle Bassac",
-        image: "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
         uploadDate: "2024-11-10T14:40:00Z"
     },
-    // Add more as needed...
+    {
+        "id": 21,
+        "type": "Condo",
+        "title": "Luxury Condo in BKK1",
+        "isSpecial": true,
+        "price": 2500,
+        "bedroom": 2,
+        "bathroom": 2,
+        "isPetFriendly": true,
+        "exerciseRoom": true,
+        "listedBy": "John Doe",
+        "phone": "555-1234",
+        "email": "john@example.com",
+        "street": "1235 St. 51",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Boeung Keng Kang 1",
+        "districtKhom": "Chamkarmon",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-12-01T09:00:00Z"
+    },
+    {
+        "id": 22,
+        "type": "Apartment",
+        "title": "Affordable Apartment Near Russian Market",
+        "isSpecial": false,
+        "price": 800,
+        "bedroom": 1,
+        "bathroom": 1,
+        "isPetFriendly": false,
+        "exerciseRoom": false,
+        "listedBy": "Jane Smith",
+        "phone": "555-5678",
+        "email": "jane@example.com",
+        "street": "12 St. 128",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Toul Tom Poung",
+        "districtKhom": "Chamkarmon",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-11-15T11:30:00Z"
+    },
+    {
+        "id": 23,
+        "type": "Townhome",
+        "title": "Spacious Townhome in Phnom Penh",
+        "isSpecial": false,
+        "price": 1700,
+        "bedroom": 3,
+        "bathroom": 2,
+        "isPetFriendly": false,
+        "exerciseRoom": true,
+        "listedBy": "Barry Allen",
+        "phone": "333-666-7777",
+        "email": "barry@example.com",
+        "street": "100 Speed St",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Chamkarmon",
+        "districtKhom": "Tonle Bassac",
+        "images": [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-11-10T14:40:00Z"
+    },
+    {
+        "id": 24,
+        "type": "Villa",
+        "title": "Modern Villa with Pool in Phnom Penh",
+        "isSpecial": true,
+        "price": 4000,
+        "bedroom": 5,
+        "bathroom": 4,
+        "isPetFriendly": true,
+        "exerciseRoom": true,
+        "listedBy": "Alice Wong",
+        "phone": "555-9876",
+        "email": "alice@example.com",
+        "street": "15 St. 268",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Toul Kork",
+        "districtKhom": "Toul Kork",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-12-01T08:15:00Z"
+    },
+    {
+        "id": 25,
+        "type": "Condo",
+        "title": "High-End Condo in City Center",
+        "isSpecial": false,
+        "price": 2800,
+        "bedroom": 3,
+        "bathroom": 2,
+        "isPetFriendly": true,
+        "exerciseRoom": true,
+        "listedBy": "Charlie Brown",
+        "phone": "555-1122",
+        "email": "charlie@example.com",
+        "street": "50 St. 9",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Sangkat Phsar Thmei 3",
+        "districtKhom": "Daun Penh",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-11-05T12:30:00Z"
+    },
+    {
+        "id": 26,
+        "type": "Studio",
+        "title": "Cozy Studio in Chamkarmon",
+        "isSpecial": false,
+        "price": 600,
+        "bedroom": 1,
+        "bathroom": 1,
+        "isPetFriendly": false,
+        "exerciseRoom": false,
+        "listedBy": "Michael Jordan",
+        "phone": "555-3333",
+        "email": "michael@example.com",
+        "street": "20 St. 63",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Chamkarmon",
+        "districtKhom": "Chamkarmon",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-11-20T10:00:00Z"
+    },
+    {
+        "id": 27,
+        "type": "Townhome",
+        "title": "Luxury Townhome with Garden",
+        "isSpecial": true,
+        "price": 3000,
+        "bedroom": 4,
+        "bathroom": 3,
+        "isPetFriendly": true,
+        "exerciseRoom": false,
+        "listedBy": "Bruce Wayne",
+        "phone": "555-4444",
+        "email": "bruce@example.com",
+        "street": "22 St. 254",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Tonle Bassac",
+        "districtKhom": "Chamkarmon",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-12-02T13:00:00Z"
+    },
+    {
+        "id": 28,
+        "type": "Apartment",
+        "title": "Studio Apartment in BKK3",
+        "isSpecial": false,
+        "price": 700,
+        "bedroom": 1,
+        "bathroom": 1,
+        "isPetFriendly": false,
+        "exerciseRoom": false,
+        "listedBy": "Clark Kent",
+        "phone": "555-5555",
+        "email": "clark@example.com",
+        "street": "30 St. 289",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Boeung Keng Kang 3",
+        "districtKhom": "Chamkarmon",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-11-25T15:00:00Z"
+    },
+    {
+        "id": 29,
+        "type": "Villa",
+        "title": "Luxury Villa with Large Yard",
+        "isSpecial": true,
+        "price": 5500,
+        "bedroom": 6,
+        "bathroom": 5,
+        "isPetFriendly": true,
+        "exerciseRoom": true,
+        "listedBy": "Peter Parker",
+        "phone": "555-7777",
+        "email": "peter@example.com",
+        "street": "40 St. 201",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Chroy Changvar",
+        "districtKhom": "Ruessei Keo",
+        images: [
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-12-04T16:00:00Z"
+    },
+    {
+        "id": 30,
+        "type": "Condo",
+        "title": "Modern Condo Near Riverside",
+        "isSpecial": false,
+        "price": 2300,
+        "bedroom": 2,
+        "bathroom": 2,
+        "isPetFriendly": true,
+        "exerciseRoom": true,
+        "listedBy": "Natasha Romanoff",
+        "phone": "555-8888",
+        "email": "natasha@example.com",
+        "street": "55 St. 110",
+        "cityProvince": "Phnom Penh",
+        "communeSrok": "Sangkat Chroy Changvar",
+        "districtKhom": "Ruessei Keo",
+        images: [
+            "https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp",
+
+            "https://media.baamboozle.com/uploads/images/110724/1615492952_33740_url.jpeg",
+            "https://ar.rdcpix.com/a529e6cef819c2ba41307f421e4ad7b0c-f3922270992rd-w1280_h960.webp"
+        ],
+        "uploadDate": "2024-12-03T17:30:00Z"
+    }
 ];
 
 
