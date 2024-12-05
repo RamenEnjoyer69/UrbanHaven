@@ -4,9 +4,12 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { GrShareOption } from "react-icons/gr";
 import ContactForm from "@/components/contactForm/ContactForm";
 import { PiHeartBold, PiHeartFill } from "react-icons/pi";
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { RiSecurePaymentFill } from "react-icons/ri";
 import ImageContainer from "@/components/ImageContainer";
 import TourRequest from "@/components/tourRequest/TourRequest";
+import Link from "next/link";
+import LandlordInfo from "@/components/landlord/LandlordInfo";
 
 const detailsPage = () => {
   return (
@@ -44,6 +47,29 @@ const detailsPage = () => {
               </div>
 
               <div className="w-full space-y-3">
+                <div className="space-y-2">
+                  <p className="underline">Provided by:</p>
+                  {/* <Avatar>
+                    <AvatarImage src="/images/a.jpg" />
+                    <AvatarFallback>Ana de Armas</AvatarFallback>
+                  </Avatar> */}
+
+                  <div className="flex items-center">
+                    <a href="#owner_info">
+                      <img
+                        src="/images/a.jpg"
+                        alt=""
+                        className="w-10 h-10 rounded-full"
+                      />
+                    </a>
+
+                    <div className="ml-3 ">
+                      <p className="font-bold">Ana de Armas</p>
+                      <p>5 years of rental experience</p>
+                    </div>
+                  </div>
+                </div>
+                <hr />
                 <p className="text-[2rem] font-bold ">
                   $69,000<span className="text-[1rem] text-gray-500">/mo</span>
                 </p>
@@ -61,9 +87,19 @@ const detailsPage = () => {
                 </p>
               </div>
 
-              <div className="mt-20">
+              <section className="mt-10">
                 <TourRequest />
-              </div>
+              </section>
+
+              <section className="mt-10 font-bold text-[22px]">
+                Property Details
+              </section>
+
+              <section className="mt-10 font-bold text-[22px]">
+                Where you'll be
+              </section>
+
+              <section className="mb-20"></section>
             </div>
           </div>
           <div className="col-span-3">
@@ -77,7 +113,38 @@ const detailsPage = () => {
         </section>
       </div>
 
-      <div className=" mx-[16%]"></div>
+      <div className="mx-auto w-[65%] mb-40">
+        <section id="owner_info" className="mt-10">
+          <p className="font-bold text-[22px] "> Meet your landlord</p>
+          <div className="flex gap-40 mt-5">
+            <LandlordInfo />
+
+            <div className="">
+              <div>
+                <p className="font-bold text-[1.25rem]">Landlord details</p>
+
+                <div className="mt-3">
+                  <p>Respoonse rate: 100%</p>
+                  <p>Responds within a day</p>
+                </div>
+
+                <button className="mt-5 font-bold bg-purple-500 text-white p-4 rounded-lg">
+                  Message Host
+                </button>
+              </div>
+
+              <hr className="border-gray-300 mt-4 mb-2" />
+              <div className="flex items-center">
+                <RiSecurePaymentFill className="mr-3 text-red-500" size={30} />
+                <p className="text-sm">
+                  To protect your payment, never transfer money or communicate
+                  outside of UrbanHaven.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

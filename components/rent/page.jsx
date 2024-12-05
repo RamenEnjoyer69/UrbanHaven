@@ -205,17 +205,18 @@ export default function Rent() {
 
   return (
     <div className="pt-14 px-4">
-      <div className="flex gap-2">
+      <div className="flex gap-2 z-50">
         {/* Search Box */}
         <div className="relative">
           <input
             type="text"
             id="search"
-            className="w-full px-12 py-2 rounded-full border border-gray-400"
+            className="w-full px-12 py-2 rounded-full border border-gray-400 focus:border-purple-500"
             placeholder="Search"
-            value={filters.search} // Bind the input value to filters.search
-            onChange={(e) => handleFilterChange("search", e.target.value)} // Update search state on change
+            value={filters.search}
+            onChange={(e) => handleFilterChange("search", e.target.value)}
           />
+
           <FiSearch
             className="absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-500"
             size={20}
@@ -223,7 +224,7 @@ export default function Rent() {
         </div>
 
         {/* Price Dropdown */}
-        <div className="relative">
+        <div className="relative z-50">
           <button
             onClick={() => toggleDropdown("price")}
             className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg flex items-center hover:shadow"

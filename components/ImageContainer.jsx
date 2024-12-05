@@ -10,7 +10,7 @@ const ImageContainer = () => {
   };
 
   return (
-    <div className=" h-[500px] rounded-2xl grid grid-cols-12 gap-1 overflow-hidden">
+    <div className=" min-h-[420px] rounded-2xl grid grid-cols-12 gap-1 overflow-hidden">
       <div className="col-span-9 bg-gray-200">
         <img
           src="https://ar.rdcpix.com/a7f7688ac37b584ba50f3bb725b92443c-f2738826364rd-w1280_h960.webp"
