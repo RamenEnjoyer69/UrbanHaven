@@ -40,10 +40,10 @@ const LandlordInfo = () => {
       </div>
 
       <div className="mt-5">
-        <div className="flex items-center gap-3">
+        {/* <div className="flex items-center gap-1">
           <MdOutlineWorkOutline />
           <p>My work: Actress</p>
-        </div>
+        </div> */}
         <p>hi</p>
         <p>hi</p>
       </div>
