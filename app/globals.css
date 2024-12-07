@@ -99,22 +99,22 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-11140px / 2));
+    transform: translateX(calc(-5200px / 2));
   }
 }
 @keyframes reversedScroll {
   from {
-    transform: translateX(calc(-11140px / 2));
+    transform: translateX(calc(-5200px / 2));
   }
   to {
     transform: translateX(0);
   }
 }
 .animate-reversedScroll {
-  animation: reversedScroll 50s linear infinite;
+  animation: reversedScroll 40s linear infinite;
 }
 .animate-scroll {
-  animation: scroll 50s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .form-input {

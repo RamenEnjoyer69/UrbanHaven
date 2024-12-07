@@ -44,7 +44,7 @@ const LandlordInfo = () => {
         </div>
       </div>
 
-      <div className="mt-8 space-y-3">
+      <div className="mt-10 space-y-3">
         <div className="flex items-center gap-3">
           <LiaBirthdayCakeSolid size={25} />
           <p>Born in 1988</p>

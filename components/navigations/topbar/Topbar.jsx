@@ -10,8 +10,9 @@ const Topbar = () => {
       </div> */}
 
       <div className="text-[1.5rem] text-gray-600 font-semibold">
-        <a href="/home">
-          <img src="/images/logo_purple.png" alt="" className="h-10" />
+        <a href="/home" className="flex items-center">
+          <img src="/images/logo.png" alt="" className="h-10" />
+          <p className="ml-2 text-purple-600">urbanhaven</p>
         </a>
         {/* UrbanHaven */}
       </div>

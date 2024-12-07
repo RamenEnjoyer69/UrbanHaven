@@ -16,10 +16,10 @@ import Map from "@/components/map/Map";
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
 import PropertyDetails from "@/components/propertyDetails/PropertyDetails";
+import PropertyFeatures from "@/components/propertyDetails/PropertyFeatures";
+import { FaChevronRight } from "react-icons/fa6";
 
 const detailsPage = () => {
-  const location = "cambodia";
-
   // const Map = dynamic(() => import("@/components/map/Map"), {
   //   ssr: false, // Disable server-side rendering
   // });
@@ -104,9 +104,9 @@ const detailsPage = () => {
               </section>
               <hr className="w-full border-gray-300 mt-8" />
               <PropertyDetails />
-              <hr className="w-full border-gray-300 mt-10" />
-
-              {/* <section className="mb-10"></section> */}
+              <hr className="w-full border-gray-300 mt-2" />
+              <PropertyFeatures />
+              <hr className="w-full border-gray-300 " />
             </div>
           </div>
           <div className="col-span-3">
@@ -121,15 +121,29 @@ const detailsPage = () => {
       </div>
 
       <div className="mx-auto w-[65%] mb-40">
-        <section className="mt-10 ">
+        <section className=" ">
           <p className="font-bold text-[22px]">Where you'll be</p>
 
           {/* <Map location={[40.7128, -74.006]} zoom={12} /> */}
           <Map location={[11.5564, 104.9282]} zoom={12} />
 
-          <p className="mt-5 text-[1.15rem]">
+          <p className="mt-2 text-sm">
             We verified that this listing's location is accurate.
           </p>
+
+          <p className="mt-5">
+            The apartment is very close to Saint Peter's Basilica (20minute
+            walk). The area is safe, green, well connected to the city centre
+            and close to Trastevere, one of Rome's most typical neighbourhoods
+            and a favourite area for bars, restaurants and night life. In a
+            ten-minute walk from the apartment you can reach the beautiful Villa
+            Pamphili, and ideal spot for a morning jog or just a stroll or a
+            pic-nic in the park to take a break from the city's rush...
+          </p>
+
+          <button className="font-bold underline flex gap-1 text-[1.15rem] mt-3 items-center">
+            Show more <FaChevronRight />
+          </button>
         </section>
         <hr className="w-full border-gray-300 mt-8" />
         <section id="owner_info" className="mt-10">
