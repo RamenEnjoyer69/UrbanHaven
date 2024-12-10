@@ -197,7 +197,7 @@ export default function Rent() {
 
   return (
     <div className="pt-14 px-4">
-      <div className="flex gap-2 z-50">
+      <div className="flex gap-2 z-50 mb-10">
         {/* Search Box */}
         <div className="relative w-full sm:w-auto">
           <input
@@ -385,7 +385,7 @@ export default function Rent() {
               )}
               <div
                 className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
-                  saved[property.id] ? "text-red-400" : "text-gray-400"
+                  saved[property.id] ? "text-red-400" : "text-black"
                 }`}
                 onClick={(event) => {
                   event.preventDefault();
@@ -436,7 +436,7 @@ export default function Rent() {
         ))}
       </div>
 
-      <div className="flex justify-center items-center gap-4 mt-4 mb-5">
+      <div className="flex justify-center items-center gap-4 mt-10 mb-5">
         <button
           onClick={() => handlePageChange("prev")}
           disabled={currentPage === 1}

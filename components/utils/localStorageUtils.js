@@ -17,4 +17,3 @@ export const saveFavorites = (favorites) => {
 export const setFavorites = (favorites) => {
   localStorage.setItem("favorites", JSON.stringify(favorites));
 };
-
