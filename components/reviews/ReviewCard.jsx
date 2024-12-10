@@ -3,10 +3,10 @@ import { Avatar } from "../ui/avatar";
 
 const ReviewCard = ({ feedback, user, profession }) => {
   return (
-    <div className="flex flex-col bg-gray-100 rounded-3xl w-[600px] h-[350px] relative overflow-hidden shrink-0">
+    <div className="flex flex-col bg-gray-200 rounded-3xl w-[500px] h-[350px] relative overflow-hidden shrink-0">
       <div className="p-8 z-10 backdrop-blur-2xl w-full h-full">
         <FaQuoteLeft size={30} className="text-purple-600" />
-        <p className="mt-5 font-semibold text-[1.25rem] min-h-[200px]">
+        <p className="mt-5 font-semibold text-[1.15rem] min-h-[200px]">
           {feedback}
         </p>
 

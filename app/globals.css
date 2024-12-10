@@ -99,25 +99,36 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-11140px / 2));
+    transform: translateX(calc(-5200px / 2));
   }
 }
 @keyframes reversedScroll {
   from {
-    transform: translateX(calc(-11140px / 2));
+    transform: translateX(calc(-5200px / 2));
   }
   to {
     transform: translateX(0);
   }
 }
 .animate-reversedScroll {
-  animation: reversedScroll 50s linear infinite;
+  animation: reversedScroll 40s linear infinite;
 }
 .animate-scroll {
-  animation: scroll 50s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .form-input {
   border: 5px solid #000000;
   width: 100%;
+}
+
+.custom-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 0 !important;
 }

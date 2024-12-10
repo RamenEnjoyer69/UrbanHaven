@@ -42,7 +42,7 @@ const ContactForm = () => {
             title: "Error",
             description: `Failed to send email, please try again later..`,
             variant: "destructive",
-            action: <ToastAction altText="Try again">Try again</ToastAction>,
+            // action: <ToastAction altText="Try again">Try again</ToastAction>,
           });
         }
       );
@@ -73,7 +73,7 @@ const ContactForm = () => {
       />
       <textarea
         placeholder="Message"
-        rows="6"
+        rows="3"
         name="message"
         defaultValue="I'm interested in this property."
         className="w-full rounded-md px-4 text-gray-800 bg-gray-100 focus:bg-transparent pt-3 outline-purple-500"

@@ -1,39 +1,45 @@
 "use client";
 import { useState, useEffect } from "react";
 import Collage from "./Collage";
+import CollageAlt from "./CollageAlt";
+import { useMediaQuery } from "react-responsive";
 
 const SelfPromo = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isClient, setIsClient] = useState(false);
+  const is1920x1080 = useMediaQuery({
+    query: "(min-width: 1920px) and (min-height: 1080px)",
+  });
 
-  // Ensure the effect only runs on the client
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsClient(true); // This ensures the component is rendered on the client
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // const [isClient, setIsClient] = useState(false);
 
-      const handleMouseMove = (e) => {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      };
+  // // Ensure the effect only runs on the client
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setIsClient(true); // This ensures the component is rendered on the client
 
-      window.addEventListener("mousemove", handleMouseMove);
+  //     const handleMouseMove = (e) => {
+  //       setMousePosition({ x: e.clientX, y: e.clientY });
+  //     };
 
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-      };
-    }
-  }, []);
+  //     window.addEventListener("mousemove", handleMouseMove);
 
-  // Calculate parallax offset based on mouse movement
-  const calculateParallax = (offset, axis) => {
-    return axis === "x"
-      ? (mousePosition.x - window.innerWidth / 2) * offset
-      : (mousePosition.y - window.innerHeight / 2) * offset;
-  };
+  //     return () => {
+  //       window.removeEventListener("mousemove", handleMouseMove);
+  //     };
+  //   }
+  // }, []);
 
-  if (!isClient) {
-    // Return null or a placeholder when server-side rendering
-    return null;
-  }
+  // // Calculate parallax offset based on mouse movement
+  // const calculateParallax = (offset, axis) => {
+  //   return axis === "x"
+  //     ? (mousePosition.x - window.innerWidth / 2) * offset
+  //     : (mousePosition.y - window.innerHeight / 2) * offset;
+  // };
+
+  // if (!isClient) {
+  //   // Return null or a placeholder when server-side rendering
+  //   return null;
+  // }
 
   return (
     <div className="w-full h-[600px] flex items-center relative bg-gray-200 shadow-md">
@@ -144,7 +150,7 @@ const SelfPromo = () => {
         <p className="w-full grid place-content-center font-bold text-[1.75rem] text-white text-shadow">
           UrbanHaven - All the best living spaces you seek, in one place.
         </p>
-        <div className="flex gap-10">
+        <div className="flex gap-10 flex-col xl:flex-row">
           <a
             href="rent"
             className="shadow-lg border-2 border-gray-200 text-white bg-slate-300 bg-opacity-40 backdrop-blur-lg hover:scale-105 transition-all ease-in-out rounded-full py-2 px-5 grid place-items-center w-48 text-[1.25rem]"
@@ -153,7 +159,7 @@ const SelfPromo = () => {
           </a>
           <a
             href="about"
-            className="shadow-lg border-2 border-white bg-white hover:scale-105 transition-all ease-in-out rounded-full py-2 px-5 grid place-items-center w-40 text-[1.25rem]"
+            className="shadow-lg border-2 border-white bg-white hover:scale-105 transition-all ease-in-out rounded-full py-2 px-5 grid place-items-center w-48 text-[1.25rem]"
           >
             About us
           </a>

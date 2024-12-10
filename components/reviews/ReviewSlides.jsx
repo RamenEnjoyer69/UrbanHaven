@@ -11,31 +11,31 @@ const ReviewSlides = ({ direction }) => {
         user="Joe Mom"
         profession="Professional trash talker"
       />
-      <ReviewCard
+      {/* <ReviewCard
         feedback="Cool af bruh."
         user="Joe Mom"
         profession="Professional trash talker"
-      />
-      <ReviewCard
+      /> */}
+      {/* <ReviewCard
         feedback="Whoa."
         user="Joe Mom"
         profession="Professional trash talker"
-      />
-      <ReviewCard
+      /> */}
+      {/* <ReviewCard
         feedback="I second what Joe said."
         user="Joe Mom"
         profession="Professional trash talker"
-      />
+      /> */}
       <ReviewCard
         feedback="Dam son. Where'd you find that?"
         user="Joe Mom"
         profession="Professional trash talker"
       />
-      <ReviewCard
+      {/* <ReviewCard
         feedback="Never gonna give you up."
         user="Joe Mom"
         profession="Professional trash talker"
-      />
+      /> */}
       <ReviewCard
         feedback="I CAME IN LIKE A WRECKING BALL!!!!!!!!!"
         user="Joe Mom"
@@ -57,7 +57,7 @@ const ReviewSlides = ({ direction }) => {
         user="Joe Mom"
         profession="Professional trash talker"
       />
-      <ReviewCard
+      {/* <ReviewCard
         feedback="Cool af bruh."
         user="Joe Mom"
         profession="Professional trash talker"
@@ -71,17 +71,13 @@ const ReviewSlides = ({ direction }) => {
         feedback="I second what Joe said."
         user="Joe Mom"
         profession="Professional trash talker"
-      />
+      /> */}
       <ReviewCard
         feedback="Dam son. Where'd you find that?"
         user="Joe Mom"
         profession="Professional trash talker"
       />
-      <ReviewCard
-        feedback="Never gonna give you up."
-        user="Joe Mom"
-        profession="Professional trash talker"
-      />
+
       <ReviewCard
         feedback="I CAME IN LIKE A WRECKING BALL!!!!!!!!!"
         user="Joe Mom"
@@ -89,6 +85,11 @@ const ReviewSlides = ({ direction }) => {
       />
       <ReviewCard
         feedback="You know nothing Jon Snow."
+        user="Joe Mom"
+        profession="Professional trash talker"
+      />
+      <ReviewCard
+        feedback="ITS OVER ANAKIN - I HAVE THE HIGHGROUND."
         user="Joe Mom"
         profession="Professional trash talker"
       />

@@ -4,14 +4,14 @@ import SmallCard from "../smallCard/SmallCard";
 
 const Promotions = () => {
   return (
-    <div className="min-h-96 mx-[16.5%] px-4 mt-14 mb-36 flex flex-col">
+    <div className="min-h-96 mx-4 sm:mx-6 md:mx-[10%] lg:mx-[16.5%] px-4 mt-14 mb-16 flex flex-col">
       <SectionHeading
         title="Special Offers"
         location="New York"
         additional={"Rentals with special offers"}
       />
 
-      <div className="grid grid-cols-4 gap-3 place-items-center w-full h-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <SmallCard
           image="https://ap.rdcpix.com/ebda49aafcd917e2aece8e7506d4c87bl-m2626022673rd-w960_h720.webp"
           type="Apartment"

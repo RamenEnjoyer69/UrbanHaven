@@ -1,22 +1,10 @@
-import SearchBar from "@/components/Search/SearchBar";
 import React from "react";
+import Rent from "@/components/rent/page";
 
 const RentPage = () => {
   return (
-    <div className="w-full h-auto min-h-[100vh]">
-      <div className="w-full relative flex flex-col items-center">
-        <div
-          className="w-full h-80 "
-          // style={{
-          //   backgroundImage: "url(/images/skyline.jpg)",
-          //   backgroundRepeat: "none",
-          //   backgroundSize: "cover",
-          //   backgroundPosition: "bottom",
-          // }}
-        ></div>
-        <SearchBar />
-        <div className="w-full h-20 bg-white"></div>
-      </div>
+    <div className="mx-auto w-[90%] sm:w-[80%] md:w-[70%] h-auto min-h-[100vh] mb-20">
+      <Rent />
     </div>
   );
 };

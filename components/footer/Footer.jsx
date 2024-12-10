@@ -62,58 +62,37 @@ const Footer = () => {
         <div className="flex w-full ">
           <ul className="flex text-white gap-5 font-semibold max-w-[100%] flex-wrap ">
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Terms and conditions</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Terms & fees</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Advertising</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Privacy and policy</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Help center</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Cancellation options</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Disabilities support</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Community forum</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Careers</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Investors</a>
             </li>
             <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
-            </li>
-            <li className="hover:underline ">
-              <a href="">something</a>
+              <a href="">Feedback</a>
             </li>
           </ul>
         </div>
