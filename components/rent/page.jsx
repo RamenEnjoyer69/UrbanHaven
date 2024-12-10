@@ -368,7 +368,7 @@ export default function Rent() {
         {getCurrentPageProperties().map((property) => (
           <a
             key={property.id}
-            href={`/rent/${property.id}`}
+            href={`/details/${property.id}`}
             className="select-none overflow-hidden w-full h-[356.91px] rounded-2xl border-gray-200 hover:shadow-xl shadow-md transition-all ease-in-out duration-200 mx-4"
           >
             <div className="h-[56.44%] w-full relative">

@@ -63,7 +63,10 @@ const Favorite = () => {
       {loading ? (
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {[...Array(itemsPerPage)].map((_, index) => (
-            <div key={index} className="w-full h-[356.91px] rounded-2xl border-gray-200 shadow-md mx-4">
+            <div
+              key={index}
+              className="w-full h-[356.91px] rounded-2xl border-gray-200 shadow-md mx-4"
+            >
               <Skeleton height="100%" />
               <div className="flex flex-col py-4 px-4">
                 <Skeleton width="50%" />
@@ -102,8 +105,9 @@ const Favorite = () => {
 
                     {/* Favorite Icon */}
                     <div
-                      className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${saved[property.id] ? "text-red-400" : "text-gray-400"
-                        }`}
+                      className={`border-[1px] border-black rounded-full w-12 h-12 bg-white z-10 flex justify-center items-center absolute bottom-3 right-3 hover:brightness-90 cursor-pointer ${
+                        saved[property.id] ? "text-red-400" : "text-gray-400"
+                      }`}
                       onClick={(event) => {
                         event.preventDefault();
                         event.stopPropagation(); // Prevent click from propagating to the <a>
@@ -127,7 +131,9 @@ const Favorite = () => {
                     </div>
 
                     {/* Price */}
-                    <h3 className="text-[1.5rem] font-bold">${property.price}</h3>
+                    <h3 className="text-[1.5rem] font-bold">
+                      ${property.price}
+                    </h3>
 
                     {/* Beds & Baths */}
                     <div className="flex space-x-2 text-gray-500">
@@ -166,10 +172,11 @@ const Favorite = () => {
               <button
                 onClick={() => handlePageChange("prev")}
                 disabled={currentPage === 1}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === 1
-                  ? "border-gray-300 text-gray-400"
-                  : "border-gray-500 text-gray-700 hover:bg-gray-100"
-                  }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
+                  currentPage === 1
+                    ? "border-gray-300 text-gray-400"
+                    : "border-gray-500 text-gray-700 hover:bg-gray-100"
+                }`}
               >
                 <FiChevronLeft /> Prev
               </button>
@@ -179,10 +186,11 @@ const Favorite = () => {
               <button
                 onClick={() => handlePageChange("next")}
                 disabled={currentPage === totalPages}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full border ${currentPage === totalPages
-                  ? "border-gray-300 text-gray-400"
-                  : "border-gray-500 text-gray-700 hover:bg-gray-100"
-                  }`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full border ${
+                  currentPage === totalPages
+                    ? "border-gray-300 text-gray-400"
+                    : "border-gray-500 text-gray-700 hover:bg-gray-100"
+                }`}
               >
                 Next <FiChevronRight />
               </button>

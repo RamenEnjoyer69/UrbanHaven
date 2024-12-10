@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 
-const ImageContainer = () => {
+const ImageContainer = ({ params }) => {
   const router = useRouter();
 
   // append "photos" to the current URL

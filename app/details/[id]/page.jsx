@@ -18,8 +18,44 @@ import dynamic from "next/dynamic";
 import PropertyDetails from "@/components/propertyDetails/PropertyDetails";
 import PropertyFeatures from "@/components/propertyDetails/PropertyFeatures";
 import { FaChevronRight } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import { sampleProperties } from "@/components/rent/property/property";
 
 const detailsPage = () => {
+  const [property, setProperty] = useState(30);
+  const [saved, setSaved] = useState({});
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
+    setSaved(savedFavorites);
+
+    const storedFavorites = localStorage.getItem("favorites");
+
+    if (storedFavorites) {
+      console.log("Parsed stored favorites:", JSON.parse(storedFavorites));
+    }
+  }, []);
+
+  const toggleFavorite = (id) => {
+    setSaved((prevState) => {
+      const updatedFavorites = {
+        ...prevState,
+        [id]: !prevState[id], // Toggle the saved state for the given property id
+      };
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+
+      console.log("Updated Favorites:", updatedFavorites);
+
+      const storedFavorites = localStorage.getItem("favorites");
+      console.log("Stored data in localStorage after update:", storedFavorites);
+      console.log(
+        "Type of data stored in localStorage after update:",
+        typeof storedFavorites
+      );
+
+      return updatedFavorites;
+    });
+  };
+
   // const Map = dynamic(() => import("@/components/map/Map"), {
   //   ssr: false, // Disable server-side rendering
   // });
@@ -49,9 +85,27 @@ const detailsPage = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <div className="grid place-items-center border-[1px] w-14 h-14 rounded-full shadow-md hover:bg-gray-100 cursor-pointer">
+                  {/* <div className="grid place-items-center border-[1px] w-14 h-14 rounded-full shadow-md hover:bg-gray-100 cursor-pointer">
                     <PiHeartBold size={25} className="text-gray-700" />
+                  </div> */}
+
+                  <div
+                    className={`grid place-items-center border-[1px] w-14 h-14 rounded-full shadow-md hover:bg-gray-100 cursor-pointer ${
+                      saved[property.id] ? "text-red-400" : "text-gray-700"
+                    }`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      event.stopPropagation();
+                      toggleFavorite(property.id);
+                    }}
+                  >
+                    {!saved[property.id] ? (
+                      <PiHeartBold size={25} />
+                    ) : (
+                      <PiHeartFill size={25} />
+                    )}
                   </div>
+
                   <div className="grid place-items-center border-[1px] w-14 h-14 rounded-full shadow-md hover:bg-gray-100 cursor-pointer">
                     <GrShareOption size={25} className="text-gray-700" />
                   </div>
