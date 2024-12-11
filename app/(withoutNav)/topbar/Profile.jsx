@@ -5,21 +5,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Profile = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
+  const [username, setUsername] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
-    // localStorage.setItem("is_login", "has_login");
-    console.log(localStorage.getItem("is_login"));
     // Check localStorage on the client side after component mounts
-    if (localStorage.getItem("is_login") === "has_login") {
+    const loginStatus = localStorage.getItem("is_login");
+    if (loginStatus === "has_login") {
       setIsLoggedIn(true);
+      setUsername(localStorage.getItem("username"));
+      setAvatar(localStorage.getItem("avatar") || "/images/my-profile.jpg"); // Replace with a fallback if no avatar is stored
     } else {
       setIsLoggedIn(false);
     }
   }, []); // Empty dependency array ensures this runs once when the component mounts
-
-  const handleClick = (route) => {
-    window.location.href = route;
-  };
 
   if (isLoggedIn === null) {
     // Optional: Render a placeholder or loading state
@@ -29,32 +28,34 @@ const Profile = () => {
   return (
     <div className="flex justify-end">
       {isLoggedIn ? (
-        <>
-          <Avatar
-            onClick={(e) => {
-              handleClick("/my-profile");
-            }}
-          >
-            <AvatarImage
-              src="/images/my-profile.jpg"
-              className="object-cover"
-            />
+        <a href="/my-profile" className="flex">
+          <Avatar>
+            <AvatarImage src={avatar} className="object-cover" />
             <AvatarFallback>-</AvatarFallback>
           </Avatar>
           <div className="ml-4 leading-none flex items-center">
-            <p className="font-bold">{localStorage.getItem("username")}</p>
+            <p className="font-bold">{username}</p>
           </div>
-        </>
+        </a>
       ) : (
-        <div className="ml-4 leading-none flex items-center">
-          <button
-            onClick={(e) => {
-              handleClick("/sign-in");
-            }}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-          >
-            Sign In
-          </button>
+        <div className="flex">
+          <div className="ml-4 leading-none flex items-center">
+            <a
+              href="/sign-up"
+              className=" text-black font-bold py-2 px-4 border-2 border-black rounded hover:border-purple-700 hover:text-purple-700"
+            >
+              Sign Up
+            </a>
+          </div>
+
+          <div className="ml-4 leading-none flex items-center">
+            <a
+              href="/sign-in"
+              className="bg-purple-500 hover:bg-purple-700 hover:border-purple-700 text-white font-bold py-2 px-4 border-2 border-purple-500 rounded"
+            >
+              Sign In
+            </a>
+          </div>
         </div>
       )}
     </div>

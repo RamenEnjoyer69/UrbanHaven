@@ -132,3 +132,8 @@
 .leaflet-top {
   z-index: 0 !important;
 }
+
+.border-gradient {
+  border-image: linear-gradient(to right, #6200ff, rgb(208, 0, 255), #ff0077);
+  border-image-slice: 1;
+}
