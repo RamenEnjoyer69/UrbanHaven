@@ -27,7 +27,7 @@ const ImageContainer = ({ params }) => {
             alt=""
             className="h-full w-full object-cover"
           /> */}
-          <div className="w-full h-full cursor-pointer" onClick={togglePanel}>
+          <div className="w-full h-full cursor-pointer">
             <ImageCarousel />
           </div>
         </div>
