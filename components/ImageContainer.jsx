@@ -4,6 +4,7 @@ import { useState } from "react";
 import NavBar from "@/components/NavBar";
 import TopPhotos from "@/components/topPhoto/TopPhotos";
 import SharePhoto from "@/components/photosrcoll/SharePhoto";
+import ImageCarousel from "./ImageCarousel";
 
 const ImageContainer = ({ params }) => {
   // const router = useRouter();
@@ -21,11 +22,14 @@ const ImageContainer = ({ params }) => {
     <>
       <div className=" min-h-[420px] rounded-2xl grid grid-cols-12 gap-1 overflow-hidden">
         <div className="col-span-9 bg-gray-200">
-          <img
+          {/* <img
             src="https://ar.rdcpix.com/a7f7688ac37b584ba50f3bb725b92443c-f2738826364rd-w1280_h960.webp"
             alt=""
             className="h-full w-full object-cover"
-          />
+          /> */}
+          <div className="w-full h-full cursor-pointer">
+            <ImageCarousel />
+          </div>
         </div>
         <div className="col-span-3 grid grid-rows-3 gap-1">
           <div

@@ -14,12 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${quicksand.variable} antialiased`}>
-        <Navigations />
-        {children}
-        <Toaster />
-        <Footer />
-      </body>
+      <body className={`${quicksand.variable} antialiased`}>{children}</body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import NavLink from "./Link";
+import Profile from "@/app/(withoutNav)/topbar/Profile";
 
 const Topbar = () => {
   return (
@@ -23,16 +24,7 @@ const Topbar = () => {
         <NavLink title="about" />
       </div>
 
-      <div className="flex justify-end ">
-        <Avatar>
-          <AvatarImage src="/images/profile.jpg" className="object-cover" />
-          <AvatarFallback>User_69</AvatarFallback>
-        </Avatar>
-
-        <div className="ml-4 leading-none flex items-center">
-          <p className="font-bold">User_69</p>
-        </div>
-      </div>
+      <Profile />
     </div>
 
     // <nav className="flex justify-center w-full fixed bg-transparent top-5 ">
